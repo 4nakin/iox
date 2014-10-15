@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://game.ioxapp.com/wuziqi/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="./五子棋-暴走微遊戲_files/linkid.js" id="undefined"></script><script async="" src="./五子棋-暴走微遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+<meta charset="utf-8">
+<title>五子棋-暴走微遊戲</title>
+<meta name="description" content="暴走微遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+<meta content="width=640, initial-scale=0.5, maximum-scale=1, minimum-scale=0.5" name="viewport">
+<link href="./五子棋-暴走微遊戲_files/wuzi.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script> alert("對不起，您的流覽器不支援HTML5，請升級流覽器至IE9、firefox或者穀歌流覽器！")</script>
+<![endif]-->
+</head>
+<body class="">
+	
+<div class="game-box">
+	<div class="game-box-title"><span id="reckonTime">301.0</span>"</div>
+	<div class="game-box-body">
+		<div class="game-box-winner" id="winner" style="display: none;"></div>
+		<div class="game-box-loser" id="loser" style="display: none;"></div>
+		<div class="game-box-red" id="red" style="display: none;"></div>
+		<div class="game-box-gesture-open" id="gestureOpen" style="display: none;"></div>
+		<div class="game-box-gesture-close" id="gestureClose" style="display: none;"></div>
+		<canvas id="wuzi" class="wuzi" width="640" height="640"></canvas>
+	</div>
+	<div class="btn-box"> <a href="javascript:" id="regretBtn" style="opacity: 1;">悔   棋(3)</a><a href="javascript:" id="restartBtnEcho">重新開始</a></div>
+</div>
+	
+<div class="menu-box" id="menuBox" style="display: none;">
+	<div class="overcast" id="overcast"></div>
+	<div class="menu">
+		<div class="menu-body" id="menuBody">
+			<div class="h1" id="h1"></div>
+			<div class="h2" id="h2" style="text-align:center;"></div>
+			<a href="javascript:" id="restartBtn">重新挑戰</a>
+			<a href="javascript:" id="nextBtn">挑戰一下局</a>
+			<a href="javascript:" id="shareBtn" onclick="dp_share();">更多遊戲</a>
+			<!-- <a href="javascript:" id="moregame" onclick="clickMore();">更多遊戲</a> -->
+			<!-- <a href="javascript:">馬不停蹄去領錢</a> 
+			<a href="javascript:" id="shareBtn">分享挑戰下一局</a> 
+			<a href="javascript:" id="vsBtn">挑戰新棋局</a> 
+			 -->
+	  </div>
+	</div>
+</div>
+<div class="share-box" id="shareBox">
+	<div class="share-overcast" id="shareOvercast"></div>
+	<div class="share-bg" id="shareBg"></div>
+</div>
+<script type="text/javascript" src="./五子棋-暴走微遊戲_files/common.js"></script> 
+<script type="text/javascript" src="./五子棋-暴走微遊戲_files/play.js"></script> 
+<script type="text/javascript" src="./五子棋-暴走微遊戲_files/AI.js"></script>
+<script type="text/javascript" src="./五子棋-暴走微遊戲_files/clasli.js"></script>
+<div class="dn">
+<audio src="audio/click.wav" id="clickAudio" preload="auto"></audio>
+<audio src="audio/click.wav" id="selectAudio" preload="auto"></audio>
+</div>
+<script language="javascript">
+		var mebtnopenurl = 'http://game.ioxapp.com/';
+		window.shareData = {
+		        "imgUrl": "http://game.9g.com/wzq/icon.png",
+		        "timeLineLink": "http://game.9g.com/wzq/game.html?f=zf",
+		        "tTitle": "五子棋",
+		        "tContent": "五子棋"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("f=zf",1)>0){
+				window.location = "http://game.ioxapp.com/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			window.location = "http://game.ioxapp.com/";
+			
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+
+			<script type="text/javascript">
+            var myData = { gameid: "wzq" };
+			function dp_submitScore(score,stitle){
+						myData.score = parseInt(score);
+						myData.scoreName =stitle+"("+score+"分)";		
+						document.title = window.shareData.tTitle ="我在五子棋挑戰中獲得了" + com.score + "分,獲得了" + stitle+ "稱號，你也來試試吧！";
+			}
+			function onShareComplete(res) {
+
+		        	document.location.href = mebtnopenurl;
+				}
+	        
+			</script>
+
+
+
+</body></html>

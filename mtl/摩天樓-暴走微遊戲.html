@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://game.ioxapp.com/mtl/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="./摩天樓-暴走微遊戲_files/linkid.js" id="undefined"></script><script async="" src="./摩天樓-暴走微遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+  <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no">
+    <title>摩天樓-暴走微遊戲</title>
+    <link rel="icon" type="image/GIF" href="http://game.ioxapp.com/mtl/res/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body style="padding: 0px; margin: 0px; border: 0px; background: rgb(0, 0, 0);">
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;" id="gameDiv">
+     
+    <div id="Cocos2dGameContainer" style="width: 1260px; height: 480px; margin: 0px auto; position: relative; overflow: hidden;"><canvas id="gameCanvas" width="1260" height="480" style="outline: none; width: 1260px; height: 480px; background-color: black;" class="gameCanvas" tabindex="99"></canvas></div>
+    
+</div>
+<!--canvas id="gameCanvas" width="480" height="800"></canvas-->
+<script>
+    var wx = {}, cc = {};
+    cc.OrbitCamera = cc.CatmullRomBy = cc.CatmullRomTo = cc.CardinalSplineBy = cc.CardinalSplineTo = {};
+</script>
+<script src="./摩天樓-暴走微遊戲_files/engine.js"></script><div style="font-family: Arial; position: absolute; left: -100px; top: -100px; line-height: normal; font-size: 26px;"></div>
+<script src="./摩天樓-暴走微遊戲_files/game.min.js"></script>
+<script language="javascript">
+		var mebtnopenurl = 'http://game.ioxapp.com/';
+		window.shareData = {
+		        "imgUrl": "http://game.9g.com/mtl/icon.png",
+		        "timeLineLink": "http://game.ioxapp.com/mtl/",
+		        "tTitle": "摩天樓-暴走微遊戲",
+		        "tContent": "摩天樓-暴走微遊戲"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://game.ioxapp.com/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="在摩天楼时，我竟然突破了"+myData.score+"层，谁敢跟我一比？";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id="share" style="display: none">
+			<img width="100%" src="./摩天樓-暴走微遊戲_files/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+        var myData = { gameid: "mtl" };
+        function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName = score+"层";
+				if(score>0){
+					if (confirm("你盖了"+score+"层摩天楼，真是了不起啊！")){
+						//dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+
+
+                            document.location.href = mebtnopenurl;
+                        
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+
+
+
+</div></body></html>

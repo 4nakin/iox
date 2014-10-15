@@ -1,0 +1,764 @@
+
+<!-- saved from url=(0028)http://game.ioxapp.com/2048/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body bgcolor="#000000" scroll="no" style="overflow-x:hidden;overflow-y:hidden;">﻿
+
+<script type="text/javascript" async="" src="./2048﹣暴走微遊戲_files/linkid.js" id="undefined"></script><script async="" src="./2048﹣暴走微遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+<title>2048﹣暴走微遊戲</title>
+<meta name="description" content="暴走微遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+<meta http-equiv="pragma" content="no-cache">
+
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.9g.com/">
+<style type="text/css">
+*{margin:0;padding:0;}
+</style>
+
+
+
+<div id="GameBox" style="position: absolute; top: 0px; left: 312.5px;">
+<canvas id="Canvas" style="position: absolute; top: 0px; left: 0px; width: 635px; height: 635px;" width="640" height="640"></canvas>
+<input type="text" name="Nickname" value="" id="Nickname" style="border: 1px none; position: absolute; top: 426.640625px; left: 238.125px; color: rgb(0, 0, 0); display: none; width: 143.8671875px; height: 41.671875px;"> 
+</div>
+<script language="javascript" src="./2048﹣暴走微遊戲_files/Loader.js" tppabs="http://game.9g.com/2048/Loader.js"></script>
+<script language="javascript" src="./2048﹣暴走微遊戲_files/Md5.js" tppabs="http://game.9g.com/2048/Md5.js"></script>
+<script language="javascript">
+var Game = {
+	toplist:{},
+	myrank:100,
+	width:0,
+	height:0,
+	scale:1,
+	playSe1:0,
+	playSe2:0,
+	nickname:"",
+	FPS:30,
+	score:0,
+	best:0,
+	isShowHelp:false,
+	isNewRecord:false,
+	status:"over",
+	table:new Array(),
+	changes:new Array(),
+	news:new Array(),
+	resize:function(){
+		var dw = Game.width = document.body.clientWidth;
+		var dh = Game.height = document.body.clientHeight;
+		var w=dw;
+		if(dh<dw){
+			w=dh;
+			$("GameBox").style.left = (dw-dh)/2;
+		}
+		else{
+			$("GameBox").style.top = (dh-dw)/2;
+		}
+		Game.scale = w/640;
+		$("Canvas").style.width=w;
+		$("Canvas").style.height=w;
+		
+		$("Nickname").style.left=240*Game.scale;
+		$("Nickname").style.top=430*Game.scale;
+		$("Nickname").style.width=145*Game.scale;
+		$("Nickname").style.height=42*Game.scale;
+		$("Canvas").style.display="";
+	}
+	,
+	init:function(){
+		Game.resize();
+		Loader.addimg("2.png");
+		Loader.addimg("4.png");
+		Loader.addimg("8.png");
+		Loader.addimg("16.png");
+		Loader.addimg("32.png");
+		Loader.addimg("64.png");
+		Loader.addimg("128.png");
+		Loader.addimg("256.png");
+		Loader.addimg("512.png");
+		Loader.addimg("1024.png");
+		Loader.addimg("2048.png");
+		Loader.addimg("4096.png");
+		Loader.addimg("bg.png");
+		Loader.addimg("gameover.png?1");
+		Loader.addimg("tryagain.png?1");
+		Loader.addimg("submit.png");
+		Loader.addimg("help1.png");
+		Loader.addimg("help2.png");
+		Loader.addimg("rankbg.png");
+		Loader.onReady = function(){
+			imgs["2"] = new Image();
+			imgs["2"].src = "2.png"/*tpa=http://game.9g.com/2048/2.png*/;
+			imgs["4"] = new Image();
+			imgs["4"].src = "4.png"/*tpa=http://game.9g.com/2048/4.png*/;
+			imgs["8"] = new Image();
+			imgs["8"].src = "8.png"/*tpa=http://game.9g.com/2048/8.png*/;
+			imgs["16"] = new Image();
+			imgs["16"].src = "16.png"/*tpa=http://game.9g.com/2048/16.png*/;
+			imgs["32"] = new Image();
+			imgs["32"].src = "32.png"/*tpa=http://game.9g.com/2048/32.png*/;
+			imgs["64"] = new Image();
+			imgs["64"].src = "64.png"/*tpa=http://game.9g.com/2048/64.png*/;
+			imgs["128"] = new Image();
+			imgs["128"].src = "128.png"/*tpa=http://game.9g.com/2048/128.png*/;
+			imgs["256"] = new Image();
+			imgs["256"].src = "256.png"/*tpa=http://game.9g.com/2048/256.png*/;
+			imgs["512"] = new Image();
+			imgs["512"].src = "512.png"/*tpa=http://game.9g.com/2048/512.png*/;
+			imgs["1024"] = new Image();
+			imgs["1024"].src = "1024.png"/*tpa=http://game.9g.com/2048/1024.png*/;
+			imgs["2048"] = new Image();
+			imgs["2048"].src = "2048.png"/*tpa=http://game.9g.com/2048/2048.png*/;
+			imgs["4096"] = new Image();
+			imgs["4096"].src = "4096.png"/*tpa=http://game.9g.com/2048/4096.png*/;
+			imgs["bg"] = new Image();
+			imgs["bg"].src = "bg.png"/*tpa=http://game.9g.com/2048/bg.png*/;
+			imgs["gameover"] = new Image();
+			imgs["gameover"].src = "gameover.png?1";
+			imgs["tryagain"] = new Image();
+			imgs["tryagain"].src = "tryagain.png?1";
+			imgs["submit"] = new Image();
+			imgs["submit"].src = "submit.png"/*tpa=http://game.9g.com/2048/submit.png*/;
+			imgs["help1"] = new Image();
+			imgs["help1"].src = "help1.png"/*tpa=http://game.9g.com/2048/help1.png*/;
+			imgs["help2"] = new Image();
+			imgs["help2"].src = "help2.png"/*tpa=http://game.9g.com/2048/help2.png*/;
+			imgs["rankbg"] = new Image();
+			imgs["rankbg"].src = "rankbg.png"/*tpa=http://game.9g.com/2048/rankbg.png*/;
+			Game.run();
+			if(Game.request("t")=="1"){
+				Game.rank();
+				return;
+			}
+			if(!localStorage.getItem("Game2048HadIn")){
+				Game.help();
+				localStorage.setItem("Game2048HadIn",1);
+			}
+			else{
+				Game.start();
+			}
+		}
+		Loader.on('load',function(name){
+			var c=$("Canvas");
+			var ctx=c.getContext("2d");
+			ctx.clearRect(0, 0, c.width, c.height);
+			var p = Loader.per();
+			ctx.font = '24px 黑体';
+			ctx.clearRect(0, 0, c.width, c.height);
+			ctx.fillStyle = "#FFFFFF";
+			ctx.fillText("" + p+ "%", 292, 360);
+		});
+		
+		Loader.load(Loader.imgs);
+		if(localStorage.getItem("Game2048Best")){
+			Game.best  = localStorage.getItem("Game2048Best");
+		}
+		else{
+			Game.best = 0;
+		}
+		if(localStorage.getItem("Game2048Nickname")){
+			Game.nickname  = localStorage.getItem("Game2048Nickname");
+			$("Nickname").value = Game.nickname;
+		}
+		else{
+			Game.best = 0;
+		}
+	}
+	,
+	submit:function(){
+		if($("Nickname").value==""){
+			alert("您还没填写您的姓名");
+			return;
+		}
+		Game.nickname = $("Nickname").value;
+		localStorage.setItem("Game2048Nickname",Game.nickname);
+
+		$("Nickname").style.display="none";
+		var result = Game.getUrl("http://m.9g.com/2048/server.jsp?code=201&serial=12312&nickname="+encodeURI(Game.nickname)+"&score="+Game.best+"&openid="+Game.request("uid"));
+		var r = JSON.parse(result);
+		//eval();
+		Game.toplist = r.result;
+		Game.status = "ranking";
+		Game.myrank = r.rank;
+		return;
+	}
+	,
+	rank:function(){
+		var result = Game.getUrl("http://m.9g.com/2048/server.jsp?code=101&serial=12312&nickname="+encodeURI(Game.nickname)+"&score="+Game.best+"&openid="+Game.request("uid"));
+		var r = JSON.parse(result);
+		Game.toplist = r.result;
+		Game.status = "ranking";
+		Game.myrank = r.rank;
+	}
+	,
+	run:function(){
+		setInterval(Game.draw,1000/Game.FPS);
+	}
+	,
+	start:function(){
+		Game.isShowShare=false;
+		for(var i=0;i<16;i++){
+			Game.table[i]=0;
+			Game.changes[i]=0;
+			Game.news[i]=0;
+		}
+		Game.table[parseInt(Math.random()*16)]=2;
+		Game.table[parseInt(Math.random()*16)]=2;
+		Game.score=0;
+		Game.status = "start";
+		$("Nickname").style.display="none";
+	}
+	,
+	over:function(){
+		if(Game.score>Game.best){
+			Game.best = Game.score;
+			Game.isNewRecord = true;
+			localStorage.setItem("Game2048Best",Game.best);
+		}
+		else{
+			Game.isNewRecord = false;
+		}
+		Game.status = "over";
+	}
+	,
+	helpStep:1,
+	help:function(){
+		Game.helpStep=1;
+		Game.status="help";
+	}
+	,
+	draw:function(){
+		var c=$("Canvas");
+		var ctx=c.getContext("2d");
+		ctx.clearRect(0, 0, c.width, c.height);
+		
+	
+		if(Game.status=="help"){
+			ctx.clearRect(0, 0, c.width, c.height);
+			ctx.drawImage(imgs["help"+Game.helpStep],0,0);
+			return;
+		}
+
+		if(Game.status=="ranking"){
+			ctx.drawImage(imgs["rankbg"],0,0);
+			ctx.font = '32px 黑体';
+			ctx.fillStyle = "#FFFFFF";
+			for(var i=0;i<9;i++){
+				ctx.fillText("第" + (i+1) + "名 ", 40, 100+40*i);
+				ctx.fillText(Game.toplist[i].nickname, 160, 100+40*i);
+				ctx.fillText(Game.toplist[i].score, 360, 100+40*i);
+			}
+
+			ctx.fillText("第" + Game.myrank + "名 ", 40, 100+40*10);
+			ctx.fillText(Game.nickname, 160, 100+40*10);
+			ctx.fillText(Game.best, 360, 100+40*10);
+			ctx.drawImage(imgs["tryagain"],225,550);
+			return;
+		}
+		ctx.drawImage(imgs["bg"],0,0);
+		ctx.font = '32px Arial';
+		ctx.fillStyle = "#FFFFFF";
+		ctx.fillText(Game.score, 290, 30);
+		ctx.fillText(Game.best, 490, 30);
+		
+		
+		for(var i=0;i<Game.table.length;i++){
+			if(Game.table[i]>0){
+				if(Game.news[i]==0){
+					ctx.drawImage(imgs[""+Game.table[i]],48+i%4*140-Game.moveFrame*Game.changes[i]/2,78+parseInt(i/4)*140-Game.moveFrame*Game.changes[i]/2,124+Game.moveFrame*Game.changes[i],124+Game.moveFrame*Game.changes[i]);
+				}
+				else{
+					if(Game.newsFrame==0){
+						ctx.drawImage(imgs[""+Game.table[i]],48+i%4*140,78+parseInt(i/4)*140,124,124);
+				}
+				else{
+					if(Game.newsFrame>12){
+						var frame=Game.newsFrame-12;
+						ctx.drawImage(imgs[""+Game.table[i]],48+i%4*140+(124-frame*10)/2,78+parseInt(i/4)*140+(124-frame*10)/2,frame*10,frame*10);
+					}
+				}
+			}
+		}
+	}
+	if(Game.moveFrame>0){
+		Game.moveFrame++;
+		if(Game.moveFrame==12)Game.moveFrame=0;
+	}
+	if(Game.newsFrame>0){
+		Game.newsFrame++;
+		if(Game.newsFrame==24)Game.newsFrame=0;
+	}
+	if(Game.status=="over"){
+		ctx.drawImage(imgs["gameover"],0,0);
+		if(Game.isNewRecord){
+			Game.showShare();
+			//ctx.drawImage(imgs["submit"],90,300);
+			//$("Nickname").style.display="";
+		}
+		ctx.font = '32px Arial';
+		ctx.fillStyle = "#FFFFFF";
+		ctx.fillText("得分："+Game.score, 290, 30);
+		
+		
+		ctx.drawImage(imgs["tryagain"],225,550);
+	}
+}
+,
+isShowShare:false
+,
+showShare:function(){
+	if(!Game.isShowShare){
+		alert("哇塞！你破纪录了耶！"+Game.score+"分！");
+		//show_share(Game.score);
+	}
+	Game.isShowShare=true;
+}
+,
+moveFrame:0,
+newsFrame:0,
+move:function(z){
+	var oldTable = new Array();
+	for(var i=0;i<Game.table.length;i++){oldTable[i]=Game.table[i];}
+	if(Game.status=="help"){
+		if(z=="left"){
+			Game.helpStep++;
+			if(Game.helpStep>2)Game.start();
+		}
+		else if(Game.helpStep>1){
+			Game.helpStep--;
+		}
+	}
+	Game.newsFrame=1;
+	Game.moveFrame=1;
+	for(var i=0;i<16;i++){
+		Game.changes[i]=0;
+		Game.news[i]=0;
+	}
+	if(z=="left"){
+		for(var j=0;j<4;j++){
+			for(var i=0;i<4;i++){
+				if(Game.table[0+i*4]==0){
+					Game.table[0+i*4]=Game.table[1+i*4];
+					Game.table[1+i*4]=Game.table[2+i*4];
+					Game.table[2+i*4]=Game.table[3+i*4];
+					Game.table[3+i*4]=0;
+				}
+				if(Game.table[1+i*4]==0){
+					Game.table[1+i*4]=Game.table[2+i*4];
+					Game.table[2+i*4]=Game.table[3+i*4];
+					Game.table[3+i*4]=0;
+				}
+				if(Game.table[2+i*4]==0){
+					Game.table[2+i*4]=Game.table[3+i*4];
+					Game.table[3+i*4]=0;
+				}
+			}
+		}
+		for(var i=0;i<4;i++){
+			if(Game.table[0+i*4]==Game.table[1+i*4]&&Game.table[1+i*4]>0){
+				Game.changes[0+i*4]=1;
+				Game.table[0+i*4]=Game.table[0+i*4]*2;
+				Game.table[1+i*4]=Game.table[2+i*4];
+				Game.table[2+i*4]=Game.table[3+i*4];
+				Game.table[3+i*4]=0;
+			}
+			else if(Game.table[1+i*4]==Game.table[2+i*4]&&Game.table[2+i*4]>0){
+				Game.changes[1+i*4]=1;
+				Game.table[1+i*4]=Game.table[1+i*4]*2;
+				Game.table[2+i*4]=Game.table[3+i*4];
+				Game.table[3+i*4]=0;
+			}
+			else if(Game.table[2+i*4]==Game.table[3+i*4]&&Game.table[3+i*4]>0){
+				Game.changes[2+i*4]=1;
+				Game.table[2+i*4]=Game.table[2+i*4]*2;
+				Game.table[3+i*4]=0;
+			}
+		}
+		
+	}
+	
+	if(z=="right"){
+		for(var j=0;j<4;j++){
+			for(var i=0;i<4;i++){
+				if(Game.table[3+i*4]==0){
+					Game.table[3+i*4]=Game.table[2+i*4];
+					Game.table[2+i*4]=Game.table[1+i*4];
+					Game.table[1+i*4]=Game.table[0+i*4];
+					Game.table[0+i*4]=0;
+				}
+				if(Game.table[2+i*4]==0){
+					Game.table[2+i*4]=Game.table[1+i*4];
+					Game.table[1+i*4]=Game.table[0+i*4];
+					Game.table[0+i*4]=0;
+				}
+				if(Game.table[1+i*4]==0){
+					Game.table[1+i*4]=Game.table[0+i*4];
+					Game.table[0+i*4]=0;
+				}
+			}
+		}
+		for(var i=0;i<4;i++){
+			if(Game.table[2+i*4]==Game.table[3+i*4]&&Game.table[3+i*4]>0){
+				Game.changes[3+i*4]=1;
+				Game.table[3+i*4]=Game.table[3+i*4]*2;
+				Game.table[2+i*4]=Game.table[1+i*4];
+				Game.table[1+i*4]=Game.table[0+i*4];
+				Game.table[0+i*4]=0;
+			}
+			else if(Game.table[1+i*4]==Game.table[2+i*4]&&Game.table[2+i*4]>0){
+				Game.changes[2+i*4]=1;
+				Game.table[2+i*4]=Game.table[2+i*4]*2;
+				Game.table[1+i*4]=Game.table[0+i*4];
+				Game.table[0+i*4]=0;
+			}
+			else if(Game.table[0+i*4]==Game.table[1+i*4]&&Game.table[1+i*4]>0){
+				Game.changes[1+i*4]=1;
+				Game.table[1+i*4]=Game.table[1+i*4]*2;
+				Game.table[0+i*4]=0;
+			}
+		}
+		
+	}
+	
+	if(z=="up"){
+		for(var j=0;j<4;j++){
+			for(var i=0;i<4;i++){
+				if(Game.table[0+i]==0){
+					Game.table[0+i]=Game.table[4+i];
+					Game.table[4+i]=Game.table[8+i];
+					Game.table[8+i]=Game.table[12+i];
+					Game.table[12+i]=0;
+				}
+				if(Game.table[4+i]==0){
+					Game.table[4+i]=Game.table[8+i];
+					Game.table[8+i]=Game.table[12+i];
+					Game.table[12+i]=0;
+				}
+				if(Game.table[8+i]==0){
+					Game.table[8+i]=Game.table[12+i];
+					Game.table[12+i]=0;
+				}
+			}
+		}
+		for(var i=0;i<4;i++){
+			if(Game.table[0+i]==Game.table[4+i]&&Game.table[4+i]>0){
+				Game.changes[0+i]=1;
+				Game.table[0+i]=Game.table[0+i]*2;
+				Game.table[4+i]=Game.table[8+i];
+				Game.table[8+i]=Game.table[12+i];
+				Game.table[12+i]=0;
+			}
+			else if(Game.table[4+i]==Game.table[8+i]&&Game.table[8+i]>0){
+				Game.changes[4+i]=1;
+				Game.table[4+i]=Game.table[4+i]*2;
+				Game.table[8+i]=Game.table[12+i];
+				Game.table[12+i]=0;
+			}
+			else if(Game.table[8+i]==Game.table[12+i]&&Game.table[12+i]>0){
+				Game.changes[8+i]=1;
+				Game.table[8+i]=Game.table[8+i]*2;
+				Game.table[12+i]=0;
+			}
+		}
+		
+	}
+	
+	if(z=="down"){
+		for(var j=0;j<4;j++){
+			for(var i=0;i<4;i++){
+				if(Game.table[12+i]==0){
+					Game.table[12+i]=Game.table[8+i];
+					Game.table[8+i]=Game.table[4+i];
+					Game.table[4+i]=Game.table[0+i];
+					Game.table[0+i]=0;
+				}
+				if(Game.table[8+i]==0){
+					Game.table[8+i]=Game.table[4+i];
+					Game.table[4+i]=Game.table[0+i];
+					Game.table[0+i]=0;
+				}
+				if(Game.table[4+i]==0){
+					Game.table[4+i]=Game.table[0+i];
+					Game.table[0+i]=0;
+				}
+			}
+		}
+		for(var i=0;i<4;i++){
+			if(Game.table[12+i]==Game.table[8+i]&&Game.table[8+i]>0){
+				Game.changes[12+i]=1;
+				Game.table[12+i]=Game.table[12+i]*2;
+				Game.table[8+i]=Game.table[4+i];
+				Game.table[4+i]=Game.table[0+i];
+				Game.table[0+i]=0;
+			}
+			else if(Game.table[8+i]==Game.table[4+i]&&Game.table[4+i]>0){
+				Game.changes[8+i]=1;
+				Game.table[8+i]=Game.table[8+i]*2;
+				Game.table[4+i]=Game.table[0+i];
+				Game.table[0+i]=0;
+			}
+			else if(Game.table[4+i]==Game.table[0+i]&&Game.table[0+i]>0){
+				Game.changes[4+i]=1;
+				Game.table[4+i]=Game.table[4+i]*2;
+				Game.table[0+i]=0;
+			}
+		}
+		
+	}
+	
+		var isScoreUp = false;
+		for(var i=0;i<16;i++){
+			if(Game.changes[i]==1){
+				Game.score+=Game.table[i];
+				isScoreUp = true;
+			}
+		}
+		var isChangeTile=false;
+		for(var i=0;i<16;i++){
+			if(Game.table[i]!=oldTable[i]){
+				isChangeTile = true;
+			}
+		}
+		
+		//new
+		if(isChangeTile){
+			var tmps = new Array();
+			for(var i=0;i<Game.table.length;i++){
+				if(Game.table[i]==0){
+					tmps[tmps.length]=i;
+				}
+			}
+			var n = tmps[parseInt(Math.random()*tmps.length)];
+			Game.news[n]=1;
+			Game.table[n]=(Math.random()>0.75)?4:2;
+			
+		}
+	
+		//gameover?
+		var isGameover=true;
+		for(var i=0;i<16;i++){
+			if(Game.table[i]==0){
+				isGameover=false;
+			}
+		}
+		for(var i=0;i<4;i++){
+			if(Game.table[0+i*4]==Game.table[1+i*4]||Game.table[1+i*4]==Game.table[2+i*4]||Game.table[2+i*4]==Game.table[3+i*4])isGameover=false;
+			if(Game.table[0+i]==Game.table[4+i]||Game.table[4+i]==Game.table[8+i]||Game.table[8+i]==Game.table[12+i])isGameover=false;
+		}
+		if(isGameover){
+			Game.over();
+		}
+	}
+	,
+	mouseX:0,
+	mouseY:0,
+	moveX:0,
+	moveY:0,
+	touchDown:function(x,y){
+		Game.mouseX = x;
+		Game.mouseY = y;
+	}
+	,
+	touchMove:function(x,y){
+		x = x-Game.mouseX;
+		y = y-Game.mouseY;
+		Game.moveX=0;
+		Game.moveY=0;
+		if(x>0){
+			if(y>x)
+				Game.moveY=1;
+			else if(y<0&&-y>x)
+				Game.moveY=-1;
+			else
+				Game.moveX=1;
+		}
+		else{
+			if(y>-x)
+				Game.moveY=1;
+			else if(y<0&&-y>-x)
+				Game.moveY=-1;
+			else
+				Game.moveX=-1;
+		}	
+	}
+	,
+	touchUp:function(x,y){
+		if(Game.status=="over"){
+			if(x>230&&x<377&&y>550&&y<587){Game.start();}
+			//if(Game.isNewRecord&&x>400&&x<520&&y>430&&y<470){Game.submit();}
+			return;
+		}
+		
+		if(Game.status=="ranking"){
+			if(x>230&&x<377&&y>550&&y<587){Game.start();}
+			return;
+		}
+		
+		Game.moveX=0;
+		Game.moveY=0;
+		x = x-Game.mouseX;
+		y = y-Game.mouseY;
+		var z;
+		if(x>0){
+			if(y>x)
+				z="down";
+			else if(y<0&&-y>x)
+				z="up";
+			else
+				z="right";
+		}
+		else{
+			if(y>-x)
+				z="down";
+			else if(y<0&&-y>-x)
+				z="up";
+			else
+				z="left";
+		
+		}
+		if((x*x+y*y)>100)Game.move(z);
+
+	}
+	,
+	getUrl:function(url,callback){
+		var xmlHttp = false;  
+		try {  
+			xmlHttp = new ActiveXObject("Msxml2.XMLHTTP"); // ie msxml3.0+（IE7.0及以上）  
+		} catch (e) {  
+			try {  
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP"); //ie msxml2.6（IE5/6）  
+			} catch (e2) {  
+				xmlHttp = false;  
+			}  
+		}  
+		if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {// Firefox, Opera 8.0+, Safari  
+			xmlHttp = new XMLHttpRequest();  
+		}  
+		if(!callback){
+			xmlHttp.open("GET",url,false);
+			xmlHttp.send();
+			return xmlHttp.responseText;
+		}
+		else{
+			xmlHttp.open("GET",url,true);
+			xmlHttp.onreadystatechange=function(){
+				if (xmlHttp.readyState==4 && xmlHttp.status==200){
+					callback(xmlHttp.responseText);
+				}
+			}
+			xmlHttp.send();
+		}
+	}
+	,
+	request:function(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	}
+
+}
+var imgs=new Array();
+function $(s){return document.getElementById(s);}
+Game.init();
+
+$("Canvas").addEventListener('mousedown', function(event) {
+	var x = (event.clientX-(Game.width-640*Game.scale)/2)/Game.scale;
+	var y = (event.clientY-(Game.height-640*Game.scale)/2)/Game.scale;
+	Game.touchDown(x,y);	
+}, false);    
+$("Canvas").addEventListener('mouseup', function(event) {
+	var x = (event.clientX-(Game.width-640*Game.scale)/2)/Game.scale;
+	var y = (event.clientY-(Game.height-640*Game.scale)/2)/Game.scale;
+	Game.touchUp(x,y);
+}, false);    
+$("Canvas").addEventListener('mousemove', function(event) {
+	var x = (event.clientX-(Game.width-640*Game.scale)/2)/Game.scale;
+	var y = (event.clientY-(Game.height-640*Game.scale)/2)/Game.scale;
+	Game.touchMove(x,y);
+}, false);    
+$("Canvas").addEventListener('touchstart', function(event) {
+	event.preventDefault();// 阻止浏览器默认事件，重要
+	var touch = event.targetTouches[0];
+	var x = (touch.clientX-(Game.width-640*Game.scale)/2)/Game.scale;
+	var y = (touch.clientY-(Game.height-640*Game.scale)/2)/Game.scale;
+	Game.touchDown(x,y);
+}, false);  
+
+$("Canvas").addEventListener('touchend', function(event) {
+	event.preventDefault();// 阻止浏览器默认事件，重要
+	var touch = event.changedTouches[0];
+	var x = (touch.clientX-(Game.width-640*Game.scale)/2)/Game.scale;
+	var y = (touch.clientY-(Game.height-640*Game.scale)/2)/Game.scale;
+	Game.touchUp(x,y);
+}, false);  
+$("Canvas").addEventListener('touchmove', function(event) {
+	event.preventDefault();// 阻止浏览器默认事件，重要
+	var touch = event.changedTouches[0];
+	var x = (touch.clientX-(Game.width-640*Game.scale)/2)/Game.scale;
+	var y = (touch.clientY-(Game.height-640*Game.scale)/2)/Game.scale;
+	Game.touchMove(x,y);
+}, false);  
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+WeixinJSBridge.call('hideToolbar');
+});
+
+
+function show_share(s){
+	if(s<1000)document.title = "我玩2048得了" + s + "分，你要不要来比一下！";
+	if(s>=1000&&s<5000)document.title = "我玩2048得了" + s + "分，厉害吧，你要不要来比一下！";
+	if(s>=5000&&s<20000)document.title = "突破了" + s + "分，人类新纪录，你要不要来比一下！";
+	if(s>=20000)document.title = "神来了，" + s + "分！！你敢不敢来比一下！";
+	if(s==0)document.title = "2048微信版-9G游戏";
+	window.shareData.tTitle = document.title;
+}
+
+
+mebtnopenurl="http://game.ioxapp.com/";
+window.shareData = {
+		"imgUrl": "http://game.9g.com/2048/icon.png",
+		"timeLineLink": "wx.html"/*tpa=http://game.9g.com/2048/wx.html*/,
+		"tTitle": "2048微信版-9G游戏",
+		"tContent": "经典游戏2048微信版！不用下载也可以玩哦"
+};
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+	WeixinJSBridge.invoke('sendAppMessage', {
+		"img_url": window.shareData.imgUrl,
+		"link": window.shareData.timeLineLink,
+		"desc": window.shareData.tContent,
+		"title": window.shareData.tTitle
+	}, function(res) {
+		document.location.href = mebtnopenurl;
+	})
+});
+
+WeixinJSBridge.on('menu:share:timeline', function(argv) {
+	WeixinJSBridge.invoke('shareTimeline', {
+		"img_url": window.shareData.imgUrl,
+		"img_width": "640",
+		"img_height": "640",
+		"link": window.shareData.timeLineLink,
+		"desc": window.shareData.tContent,
+		"title": window.shareData.tTitle
+	}, function(res) {
+		document.location.href = mebtnopenurl;
+	});
+});
+}, false);
+</script>
+
+
+</body></html>

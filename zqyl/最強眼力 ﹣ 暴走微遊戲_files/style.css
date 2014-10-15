@@ -1,0 +1,256 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, Verdana, sans-serif;
+    font-size: 10px;
+    -webkit-text-size-adjust: none; /* Prevent font scaling */
+    background-color:#222;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.8em;
+    line-height: 1.8em;
+    padding: 0 .5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+/** 
+ * NAVIGATION
+ */
+header > nav,
+footer > nav {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+header > nav > ul > li,
+footer > nav > ul > li {
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    height: 3em;
+    padding: 0 1em;
+    line-height: 3em;
+	margin-left: -.4em;
+}
+
+header > nav > ul > li:first-child,
+footer > nav > ul > li:first-child {
+	margin-left: 0;
+}
+
+header > nav > ul > li:last-child,
+footer > nav > ul > li:last-child {
+    border-right: 1px solid #333;
+}
+
+/**
+ * TOP NAVIGATION
+ */
+header {
+    margin: 1em 0 .5em;
+}
+
+header > nav > ul {
+    border-bottom: 1px solid #333;
+}
+
+header > nav > ul > li {
+    margin-bottom: -1px;
+}
+
+/**
+ * BOTTOM NAVIGATION
+ */
+footer {
+    clear: both;
+    margin: 0 0 1em;
+}
+
+footer > nav > ul {
+    border-top: 1px solid #333;
+}
+
+footer > nav > ul > li {
+    margin-top: -1px;
+}
+
+footer > p {
+    margin: 1em 0;
+    text-align: center;
+}
+
+/**
+ * LISTS
+ */
+#content > nav > ul > li,
+#content > ol > li {
+    position: relative;
+    border-bottom: 1px solid #333;
+    height: 7.5em;
+    padding: .5em;
+    overflow: hidden;
+}
+
+#content > nav > ul > li:last-child,
+#content > ol > li:last-child {
+    border-bottom: none;
+}
+
+#content > nav > ul > li > a > img,
+#content > ol > li > img {
+    float: left;
+    margin-right: .5em;
+}
+
+#content > nav > ul > li > h3,
+#content > ol > li > h3 {
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: .2em 1em .5em;
+}
+
+#content > nav > ul > li > p,
+#content > ol > li > p {
+    font-size: 1.2em;
+}
+
+#content > ol > li.message {
+    height: 3em;
+    margin: 1em;
+    line-height: 3em;
+    padding: 0 1em;
+}
+
+#content > ol > li.loading,
+#content > ol > li.info {
+    border: 2px solid #6BA5EF !important;
+    font-size: 1.3em !important;
+    color: #1B427A !important;
+    background-color: #94C6F7 !important;
+}
+
+a.jump.faq.link{
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.04, rgb(156,25,25)),
+	    color-stop(0.86, rgb(255,174,0))
+	);
+	background-image: -moz-linear-gradient(
+	    center bottom,
+	    rgb(156,25,25) 4%,
+	    rgb(255,174,0) 86%
+	);
+	border: 1px solid rgb(156,25,25);
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	color: #FFFFFF;
+	display: none;
+	font-weight: bold;
+	line-height: 2em;
+	margin: 0 0.5em 0.5em;
+	text-align: center;
+}
+
+p.faq.intro, dl.faq.list {
+    margin: 1em 0;
+    padding: 0 0.5em;
+}
+dl.faq.list > dt{
+	font-weight: bolder;
+	padding: 1em 0;
+}
+dl.faq.list > dd{
+	padding-left: 1.5em;
+}
+
+a.jump.game.play {
+    display: block;
+    text-align: center;
+    margin: 1em;
+    height: 3em;
+    line-height: 3em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+/**
+ * CARASOUL
+ */
+#carasoul {
+	margin:0 auto;
+	width:320px; 
+	padding:10px 0;
+	position:relative;
+
+}
+#carasoul #carasoulBottomNavigation {
+    display:none;
+}
+#carasoul .sideNav {
+    height:50px;
+    width:30px;
+}
+#carasoul .sideNav span{
+    display:none;
+   
+}
+#carasoul #gamesOverview {
+    overflow:hidden;
+    width:260px;
+    margin:0 auto;
+}
+#carasoul ol {
+    -webkit-transition:all 0.5s ease-in-out;
+    width:960px;
+    padding:0;
+    margin:0;
+}
+#carasoul ol li {
+    list-style:none;
+    margin:0;
+    float:left;
+}
+#carasoulLeft {
+    position:absolute;
+    left:0;
+    background: url('../../../../skel/images/arrow-left-gray.html') center left no-repeat;
+}
+#carasoulRight {
+    position:absolute;
+    right:0;
+    background: url('../../../../skel/images/arrow-right-gray.html') center right no-repeat;
+}
+#carasoul nav {
+    padding-top:10px;
+    clear:both;
+}
+#carasoul nav ul {
+	margin:0;
+	padding:0;
+	display:none;
+	text-align:center;
+}
+#carasoul nav ul li {
+	margin:0;
+	list-style:0;
+	display:inline-block;
+	list-style-type:none;
+}
+#carasoul nav ul li a span {
+    display:none;
+}
+#carasoul nav ul li a {
+    background:url('../../../../skel/images/carasoul-navigation.html');
+    display:inline-block;
+    height:16px;
+    width:16px;
+}
+#carasoul nav ul li.active a {
+     background:url('../../../../skel/images/carasoul-navigation-active.html');
+}

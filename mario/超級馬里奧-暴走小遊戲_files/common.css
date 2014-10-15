@@ -1,0 +1,87 @@
+.bt-animation {
+	transition:200ms; -webkit-transition: all 200ms; -moz-transition: all 200ms; -o-transition: all 200ms;
+}
+.bt-advertisement {
+	left: 0px; top: 0px; width: 100%; height: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 16px; position: absolute; z-index: 6000;
+}
+.bt-h-scrren {
+	left: 0px; top: 0px; width: 100%; height: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 16px; position: absolute; z-index: 6000;
+}
+.bt-v-scrren {
+	left: 0px; top: 0px; width: 100%; height: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 16px; position: absolute; z-index: 6000;
+}
+.bt-play-logo-adv {
+	left: 0px; top: 0px; width: 100%; height: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 16px; position: absolute; z-index: 6000;
+}
+.bt-play-share-tip {
+	left: 0px; top: 0px; width: 100%; height: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 16px; position: absolute; z-index: 6000;
+}
+#bt-play-logo-adv {
+	z-index: 9001;
+}
+#bt-play-logo-adv-lock {
+	z-index: 9000;
+}
+.bt-play-share-tip {
+	text-align: right;
+}
+.bt-play-share-tip-img {
+	margin: 10px 2% 0px 0px; width: 60%; max-width: 180px;
+}
+.bt-h-scrren {
+	background: rgb(255, 255, 255);
+}
+.bt-v-scrren {
+	background: rgb(255, 255, 255);
+}
+.bt-h-scrren table {
+	margin: 0px; padding: 0px; width: 100%; height: 100%;
+}
+.bt-h-scrren tr {
+	margin: 0px; padding: 0px; width: 100%; height: 100%;
+}
+.bt-h-scrren td {
+	margin: 0px; padding: 0px; width: 100%; height: 100%;
+}
+.bt-v-scrren table {
+	margin: 0px; padding: 0px; width: 100%; height: 100%;
+}
+.bt-v-scrren tr {
+	margin: 0px; padding: 0px; width: 100%; height: 100%;
+}
+.bt-v-scrren td {
+	margin: 0px; padding: 0px; width: 100%; height: 100%;
+}
+.bt-h-screen-img {
+	margin: 10px 1%; max-width: 98%;
+}
+.bt-v-screen-img {
+	margin: 10px 1%; max-width: 98%;
+}
+.bt-lock-screen {
+	background: rgb(0, 0, 0); left: 0px; top: 0px; width: 100%; height: 100%; position: absolute; z-index: 5000; opacity: 0.4;
+}
+#bt-hide-lock {
+	z-index: -1;
+}
+.bt-game-loading {
+	background: rgb(255, 255, 255); left: 0px; top: 0px; width: 100%; height: 100%; text-align: center; color: gray; font-size: 1.6rem; position: absolute;
+}
+.bt-game-loading table {
+	margin: 0px; padding: 0px; width: 100%; height: 100%;
+}
+.bt-game-loading tr {
+	margin: 0px; padding: 0px; width: 100%; height: 100%;
+}
+.bt-game-loading td {
+	margin: 0px; padding: 0px; width: 100%; height: 100%;
+}
+.bt-game-loading .bt-img {
+	width: 452px; max-width: 70%;
+}
+.bt-game-loading .bt-text {
+	padding-top: 30px;
+}
+.bt-hide {
+	margin: 0px !important; padding: 0px !important; width: 0px !important; height: 0px !important; overflow: hidden !important; opacity: 0 !important;
+}

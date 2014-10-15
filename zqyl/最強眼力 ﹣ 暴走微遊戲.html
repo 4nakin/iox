@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://game.ioxapp.com/zqyl/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="robots" content="index,follow"> 
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+	<title>最強眼力 ﹣ 暴走微遊戲</title>	
+	<meta name="description" content="暴走微遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+    <link href="./最強眼力 ﹣ 暴走微遊戲_files/style.css" tppabs="http://game.9g.com/zqyl/style.css" media="screen" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    <style type="text/css">
+      * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+		-webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+		-webkit-focus-ring-color: rgba(0, 0, 0, 0) !important; 
+		outline: none !important;
+      }
+      body{
+        background:#222222;
+
+      }
+      .main{
+        text-align: center;
+        padding:0;margin:0 auto;
+        background:#222222;
+        width:320px;
+        height:480px;
+      }
+      #frame {
+        width:320px;
+        height:480px;
+        margin:0;
+        padding:0;
+        border-top:solid 1px #222222;
+      }
+      #canvas {
+        margin:100px 0 0 0;
+        width:320px;
+        height:240px;
+		z-index: -1;
+      }
+      #logo {
+        width:260px;
+        height:40px;
+        margin:210px 0 0 30px;
+        background:url(2000.png) no-repeat 0 0;
+      }
+      #playButton {
+        width:145px;
+        height:60px;
+        margin:200px 0 0 87px;
+        background:transparent url(2000.png) no-repeat 0 -40px;
+      }
+      #playButton:hover {
+        cursor:pointer;
+      }
+      #level,#lives {
+        font-size:18px;
+        font-family: Helvetica, Arial, Verdana, Microsoft Yahei, 微软雅黑, STXihei, 华文细黑, sans-serif;
+        color:#fff;
+      }
+      #level {
+        text-align:left;
+        position:absolute;
+        padding:5px;
+      }
+      #lives {
+        padding:5px;
+        text-align:right;
+        position:absolute;
+        width:310px;
+      }
+      #hearts {
+        float:right;
+        margin-left:10px;
+      }
+      .heart {
+        background:url(2000.png) no-repeat -216px -46px;
+        width:28px;
+        height:24px;
+        display:block;
+        float:left;
+      }
+      #livesLabel {
+        float:right;
+      }
+      @font-face {
+        font-family: Helvetica, Arial, Verdana, Microsoft Yahei, 微软雅黑, STXihei, 华文细黑, sans-serif;
+      }
+      #msg {
+        font-size:18px;
+        font-family: Helvetica, Arial, Verdana, Microsoft Yahei, 微软雅黑, STXihei, 华文细黑, sans-serif;
+        color:#fff;
+        width:100%;
+        text-align:center;
+      }
+      #b1,#b2,#b3 {
+        position:absolute;
+        width:88px;
+        height:100px;
+        background: transparent;
+        display:none;
+		z-index: 500;
+      }
+      #b1 {
+        margin:140px 0 0 16px;
+      }
+      #b2 {
+        margin:140px 0 0 115px;
+      }
+      #b3 {
+        margin:140px 0 0 216px;
+      }
+      #b1:hover,#b2:hover,#b3:hover {
+        cursor:pointer;
+      }
+	  
+	  #tab {
+		margin-top: 100;
+	}
+	
+    </style>
+    <script type="text/javascript" async="" src="./最強眼力 ﹣ 暴走微遊戲_files/linkid.js" id="undefined"></script><script async="" src="./最強眼力 ﹣ 暴走微遊戲_files/analytics.js"></script><script>
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    	WeixinJSBridge.call('showOptionMenu');
+    });
+
+</script>
+<script type="text/javascript" src="./最強眼力 ﹣ 暴走微遊戲_files/play68.js" tppabs="http://game.9g.com/zqyl/js/play68.js"></script>
+
+<script language="javascript">
+//window.setTimeout("help()",1000);
+function help(){
+	if(confirm("【遊戲說明】金幣就藏在3個杯子中的一個，眼力好的你就要仔細看哦，關卡越多速度也會加快，加油！【友情提示】這裡還有更多熱門遊戲哦，要不要來看看？")){
+		window.location="http://game.ioxapp.com/";
+	}
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body style="background: #222; margin: 0 auto;" onorientationchange="window.scrollTo(0, 1);" class="os-windows osv-6_1 osmv-6">
+  
+
+      
+    <div class="main">
+      <div id="frame">
+        <div id="logo" style="display: none; opacity: 0;"></div>
+        <div id="playButton" style="display: block; opacity: 1;"></div>
+        <div id="level" style="display: none;">
+                     <span id="levelLabel">關卡：</span>
+          <span id="levelNum">1</span>
+        </div>
+        <div id="lives" style="display: none;">
+          <div id="hearts"><div class="heart">&nbsp;</div><div class="heart">&nbsp;</div><div class="heart">&nbsp;</div></div>
+                <div id="livesLabel">命：</div>
+        </div>
+        <div id="b" style="display: block;">
+          <div style="display: block;" id="b1"></div>
+          <div style="display: block;" id="b2"></div>
+          <div style="display: block;" id="b3"></div>
+        </div>
+        <canvas height="240" width="320" id="canvas" style="display: block;"></canvas><div id="msg" style="position:relative;display: block; opacity: 1;bottom:50px;"></div>
+		
+      </div>
+	  <div id="moreGames" style="position:relative; display: block; margin: 0px auto;bottom:120px;"><a href="http://game.ioxapp.com/"><img src="./最強眼力 ﹣ 暴走微遊戲_files/more.png" tppabs="http://game.9g.com/zqyl/more.png"></a><br><br>
+
+</div>
+      <script type="text/javascript" src="./最強眼力 ﹣ 暴走微遊戲_files/tween.js" tppabs="http://game.9g.com/zqyl/js/tween.js"></script>
+      <script type="text/javascript" src="./最強眼力 ﹣ 暴走微遊戲_files/zqyl.js-v" tppabs="http://game.9g.com/zqyl/js/zqyl.js?v"></script>
+    </div>
+<script type="text/javascript">
+  if (typeof StartGame == 'function') {
+    StartGame();
+  }
+  window.scrollTo(0, 1);
+</script>
+
+<link type="text/css" rel="stylesheet" href="./最強眼力 ﹣ 暴走微遊戲_files/sidebar.css" tppabs="http://game.9g.com/zqyl/sidebar.css">
+<script type="text/javascript" src="./最強眼力 ﹣ 暴走微遊戲_files/play68bar.js" tppabs="http://game.9g.com/zqyl/js/play68bar.js"></script>
+
+
+
+</body></html>

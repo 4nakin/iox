@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://game.ioxapp.com/bird/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="./像素小鳥﹣暴走微遊戲_files/linkid.js" id="undefined"></script><script async="" src="./像素小鳥﹣暴走微遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+		
+		<meta id="viewport" name="viewport" content="width=device-width,user-scalable=no">
+		<script type="text/javascript" src="./像素小鳥﹣暴走微遊戲_files/out.js"></script>
+        <title>像素小鳥﹣暴走微遊戲</title>
+    <meta name="description" content="暴走微遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+		<style type="text/css">
+			body {
+				margin:0px;
+			}
+		</style>
+		<script language="javascript">
+			var mebtnopenurl = 'http://game.ioxapp.com/';
+			window.shareData = {
+					"imgUrl": "http://game.9g.com/xsxn/icon.png",
+					"timeLineLink": "http://game.ioxapp.com/bird/",
+					"tTitle": "像素小鳥",
+					"tContent": "从前有一只鸟，飞着飞着就死了。"
+			};
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        	document.location.href = mebtnopenurl;
+		        })
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        	document.location.href = mebtnopenurl;
+		        });
+		    });
+		}, false);
+		function dp_submitScore(a,b){
+			if(a&&b>=a&&b>10){
+				//alert("新纪录哦！你过了"+b+"关!")
+				//dp_share(b)
+			}
+		}
+			
+		function dp_Ranking(){
+		    document.location.href = mebtnopenurl;
+		}
+		function dp_share(t){
+			document.title = "我玩像素小鸟过了"+t+"关！你能赢我吗？";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		</script>
+		</head>
+	<body>
+		
+		<div style="text-align:center;">
+			<canvas id="linkScreen" width="320" height="550" style="width: 320px; height: 550px;">
+				很遗憾，您的浏览器不支持HTML5，请使用支持HTML5的浏览器。
+			</canvas>
+		</div>
+        <div id="mask_container" align="center" style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; display: none; z-index: 100000; background-color: rgb(255, 255, 255);">
+                <!--img id="p2l" src="img/p2l.jpg" style="position: absolute;left: 50%;top: 50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)" -->
+        </div>
+		<div id="share" style="display:none">
+		<img width="100%" src="./像素小鳥﹣暴走微遊戲_files/2000" style="position:absolute;top:0;left:0;display:" onclick="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+
+
+	
+
+</body></html>

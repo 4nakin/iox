@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://game.ioxapp.com/click/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="./瘋狂手指 - 暴走微遊戲_files/linkid.js" id="undefined"></script><script async="" src="./瘋狂手指 - 暴走微遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+    <meta charset="utf-8">
+    <title>瘋狂手指 - 暴走微遊戲</title>
+    <meta name="description" content="暴走微遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    
+    <!--QQ:16081752-->
+
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        * {
+            -webkit-touch-callout:none;
+            -webkit-user-select:none;
+            -khtml-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+            -webkit-tap-highlight-color:rgba(0,0,0,0);
+        }
+
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+        }
+        .button {
+        display: inline-block;
+        zoom: 1;
+        vertical-align: baseline;
+        margin: 0 2px;
+        outline: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font: 14px/100% Arial, Helvetica, sans-serif;
+        padding: .5em 2em .55em;
+        text-shadow: 0 1px 1px rgba(0,0,0,.3);
+        -webkit-border-radius: .5em;
+        -moz-border-radius: .5em;
+        border-radius: .5em;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        }
+
+        .red {
+        color: #faddde;
+        border: solid 1px #980c10;
+        background: #d81b21;
+        background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#aa1317));
+        background: -moz-linear-gradient(top, #ed1c24, #aa1317);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+        }
+
+        .active {
+            background: #d81b01;
+        }
+
+    </style>
+</head>
+
+<body>
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;" id="gameDiv">
+    <div style="text-align:center;margin:50px;">
+        <span id="timer" style="color:#fff;font-size:20px;">10.00 S</span>
+    </div>
+    <button id="button" class="button red" style="margin-top: 30px;width: 160px;height:160px;border-radius:80px;font-size:18px;font-weight:bold;">HIT ME</button>
+    <div style="margin:20px;text-align:center;">
+        <div id="result" style="color:#fff;font-size:30px;">0 times</div>
+        <div id="best" style="margin-top:20px;color:#fff;font-size:20px;"> </div>
+    </div>
+</div>
+<!--div><a style="color:white" href="http://game.ioxapp.com/" target="_blank">更多遊戲</a></div-->
+
+<br><br>
+<div align="center">
+		<a href="https://play.google.com/store/apps/details?id=com.ioxapp.game.ragegame" class="game-main">
+			 <img src="./瘋狂手指 - 暴走微遊戲_files/badge_android.png" alt="">
+		</a>
+		<a href="https://www.facebook.com/rageminigame" class="game-main">
+			 <img src="./瘋狂手指 - 暴走微遊戲_files/facebook.png" alt="">
+		</a>
+</div>
+
+
+<script language="javascript">
+        var helptime=0;
+        function help(){
+        }
+
+        // var mebtnopenurl = 'http://mp.weixin.qq.com/s?__biz=MzA5Mzk1OTMwMA==&mid=200386384&idx=1&sn=2121268247b24cca125c5c8f433a7cf0#rd';
+        var mebtnopenurl = 'http://game.ioxapp.com/';
+        var myscore=0;
+        window.shareData = {
+                "imgUrl": "http://pic.yupoo.com/miller1983/DWtJfbsw/DGxrr.jpg",
+                "timeLineLink": "http://game.ioxapp.com/click/index.html",
+                "tTitle": "疯狂手指-根本停不下来，玩过之后我的手指已经不是我的了！",
+                "tContent": "在10秒内疯狂的点按钮，想赢？不容易。"
+        };
+                
+        function goHome(){
+            window.location="http://game.ioxapp.com/click/index.html";
+        }
+        function dp_share(score){
+            if(score>0){
+                document.title = "10秒我能点"+score+"下！你行？你试试"
+            }
+            else{
+                document.title = "疯狂手指-根本停不下来，玩过之后我的手指已经不是我的了！"
+            }
+            document.getElementById("share").style.display="";
+            window.shareData.tTitle = document.title;
+        }
+        function dp_Ranking(){
+            window.location="http://game.ioxapp.com/click/index.html";
+        }
+
+        function showAd(){
+        }
+        function hideAd(){
+        }
+     
+        </script>
+ 
+        <div id="result_panel" style="display:none;text-align:center;padding-top:50px;position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,0.5)">
+            <div><button id="reset" style="font-size:25px">Play Again</button><br><button style="font-size:25px"><a href="http://game.ioxapp.com/">More games</a></button></div>
+        </div>
+        <script src="./瘋狂手指 - 暴走微遊戲_files/jquery.min.js"></script>
+        <div style="display: none;">
+            <script type="text/javascript">
+            function dp_submitScore(score){
+
+                dp_share(score);
+
+                /*
+                if(score<40){
+                    if (confirm("")){
+                        myCRdata.score = score;
+                        myCRdata.scoreName = score+"步";
+                        dp_share(score);
+                    }
+                }
+                */
+            }
+            function onShareComplete(res) {
+                    document.location.href = mebtnopenurl;
+            }
+            </script>
+
+            <script type="text/javascript">
+                    var initial = 1000;
+                    var count = initial;
+                    var counter; //10 will  run it every 100th of a second
+                    var state = 0;
+                    var total = 0;
+
+                    if (localStorage.max) {
+                        $('#best').html( 'BEST: ' + localStorage.max + ' times.');
+                    }
+
+                    function timer() {
+                        if (count <= 0) {
+                            clearInterval(counter);
+                            state = 0;
+
+                            $('#result_panel').show();
+
+                            if ( !localStorage.max || parseInt(localStorage.max) < total) {
+                                localStorage.max = total;
+                                $('#best').html( 'BEST: ' + localStorage.max + ' times.');
+                            }
+
+                            localStorage.max = parseInt(localStorage.max) > total ? localStorage.max: total;
+                            return;
+                        }
+                        count--;
+                        displayCount(count);
+                    }
+
+                    function displayCount(count) {
+                        var res = count / 100;
+                        document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length) + " S";
+                    }
+
+                    $(document).on('touchmove', function(e) {
+                        e.preventDefault();
+                    })
+
+                    $('#button').on('touchstart', function () {
+
+                        if (!state) {
+                            state = 1;
+                            counter = setInterval(timer, 10);
+                        }
+
+                        this.classList.add('active');
+                    });
+
+                    $('#button').on('touchend', function () {
+                        if (state) {
+                            total++;
+                            $('#result').html(total + ' times');
+                        }
+                        this.classList.remove('active');
+                    });
+
+                    // $('#stop').on('click', function () {
+                    //     clearInterval(counter);
+                    // });
+
+                    function reset() {
+                        count = initial;
+                        total = 0;
+                        state = 0;
+                        $('#result').html(total + ' times');
+                        $('#timer').html(10 + ' S');
+                    }
+
+                    $('#reset').on('touchend', function () {
+                        reset();
+                        $('#result_panel').hide();
+                    });
+
+                    $('#doShare').on('touchend', function () {
+                        dp_share(total);
+                        $('#result_panel').hide();
+                        reset();
+                    });
+
+
+                    displayCount(initial);
+</script>
+
+
+
+           
+<scritp>
+<!--document.getElementById("ads").style.display='inline-block';-->
+
+
+
+</scritp></div></body></html>

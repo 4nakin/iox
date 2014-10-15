@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://game.ioxapp.com/fj/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" async="" src="./雷霆X戰機﹣暴走微遊戲_files/linkid.js" id="undefined"></script><script async="" src="./雷霆X戰機﹣暴走微遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta charset="utf-8">
+		<meta name="description" content="雷霆X戰機﹣暴走微遊戲">
+		<meta name="keywords" content="iPhone,Android,iPad,game,html5 game,puzzle game,puzzle,Puzzle,flick,card,postman,post,action,Flash,Flash for iPhone,html5,iPod touch,iPad">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta equiv="Expires" content="0">
+	<title>雷霆X戰機﹣暴走微遊戲</title>  
+	<style type="text/css">
+		html,body {
+			background-color: #000;
+			background-position: 54px 105px;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			color: #fff;
+			font-family: helvetica, arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			font-size: 12pt;
+			min-height: 416px;
+		}
+		
+		#canvas {
+			background-color: #000;
+			display: none;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 480px;
+			height: 720px;
+			z-index: 80;
+		}
+		
+		#making-of {
+			display: none;
+			position: absolute;
+			margin: auto;
+			left: 10px;
+			bottom: 10px;
+		}
+		
+		#canvas.desktop {
+			bottom: 0;
+			cursor: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='), auto;
+		}
+		
+		#rotate {
+			width: 125px;
+			height: 180px;
+			position: fixed;
+			margin: auto;
+			left: 0;
+			right: 0;
+			top: 30px;
+			display: none;
+		}
+		
+		#loading {
+			text-align: center;
+			margin-top: 40px;
+		}
+		
+		#nocanvas {
+			width: 360px;
+			margin: 150px auto;
+		}
+		
+		a {
+			color: #8BA7C4;
+		}
+		
+		a:hover {
+			color: #fff;
+		}
+		
+		img {
+			border: 0;
+		}
+		
+		#scoreBox {
+			position: fixed; /* wtf android? WTF? */
+			display: none;
+			width: 480px;
+			height: 100px;
+			left: 0;
+			top: 0;
+			right: 0;
+			margin: auto;
+			text-align: center;
+			z-index: 100;
+			cursor: auto;
+		}
+		
+		#tweetLink {
+			margin-top: 30px;
+			display: block;
+		}
+		
+		#scores {
+			display: none;
+			position: fixed;
+			top: 0;
+			width: 410px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			padding: 0 20px;
+			z-index: 10;
+			color: #fff;
+			font-size: 10pt;
+			cursor: auto;
+			overflow: auto;
+			height: 720px;
+			z-index: 100;
+		}
+		
+		#scores a {
+			font-weight: bold;
+			text-decoration: none;
+			color: #fff;
+		}
+		
+		#scoreMenu a {
+			padding: 2px 5px;
+			margin: 0 1em;
+		}
+		
+		#scores a.active {
+			background-color: #fff;
+			color: #000;
+		}
+		
+		#scoresBack {
+			font-size: 140%;
+		}
+		
+		#scores a:hover {
+			color: #ff7e00
+		}
+		
+		#scoresTable {
+			/*margin: 3em 0 0 0;*/
+			width: 100%;
+		}
+		
+		#scoresTable tr:hover {
+			background-color: rgba(255,255,255,0.2);
+		}
+		
+		#scoresTable .head {
+			font-weight: bold;
+			color: #aab5b9;
+		}
+		
+		.score, .stage {
+			width: 60px;
+			text-align: right;
+		}
+		
+		.rank {
+			width: 20px;
+			text-align: right;
+		}
+		
+	</style>
+	<meta name="description" content="大家一起来打飞机！">
+</head>
+<body id="0">
+
+	<div id="loading" style="display: none;">加载中...</div>
+	<canvas id="canvas" style="display: block; cursor: auto;" class="desktop" width="480" height="720">
+		
+	</canvas>
+	<div id="making-of" style="display: block;"></div>
+	<div id="scoreBox" style="bottom: 0px; display: none; z-index: 9999;">
+		<form id="scoreForm">
+		</form>
+		<div id="scoreResponse"></div>
+	</div>
+	<div id="scores" style="bottom: 0px;">
+
+	</div>
+	<img id="rotate" src="./雷霆X戰機﹣暴走微遊戲_files/rotate.png" alt="Rotate" style="display: none;">
+	<script type="text/javascript" src="./雷霆X戰機﹣暴走微遊戲_files/xtype.min.js"></script>
+	<script language="javascript">
+		var mebtnopenurl = 'http://game.ioxapp.com/';
+		window.shareData = {
+		        "imgUrl": "http://i2.tietuku.com/ca1711cea9611165.png",
+		        "timeLineLink": "http://a.pentv.cn/fj/index.html?f=zf",
+		        "tTitle": "雷霆X战机-pentv微信游戏软件",
+		        "tContent": "各位机师们出来了，快来一起打飞机!"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function dp_submitScore(score){
+			if(score>10000){
+				if (confirm(score+"分！截屏分享給你的朋友們吧！")){
+					//dp_share(score);
+				}
+			}
+		}		
+		function dp_share(t){
+			document.title = t+"分！截屏分享給你的朋友們吧！";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			//alert("到更多");
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id="share" style="display: none">
+			<img width="100%" src="./雷霆X戰機﹣暴走微遊戲_files/share.png" style="position: absolute;z-index:9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+
+    <script src="./雷霆X戰機﹣暴走微遊戲_files/jquery.min.js"></script>
+		<script src="./雷霆X戰機﹣暴走微遊戲_files/api.js"></script>
+		<div style="display: none;">
+			<script type="text/javascript">
+			var auth = new Auth9G("fj");
+			var myData = {};
+			auth.identify = function() {
+				if (auth.user) {
+					window.shareData.timeLineLink += ((window.shareData.timeLineLink.indexOf("?") == -1 ? "?" : "&") + "uid=" + auth.myuid);
+				}
+			}
+		
+		
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName = score;
+				if(score>10000){
+					if (confirm(score+"分！截屏分享給你的朋友們吧！")){
+						//dp_share(score);
+					}
+				}
+			}
+			function onShareComplete(res) {
+
+		        	document.location.href = mebtnopenurl;
+				
+	        }
+			</script>
+		</div>
+</body></html>

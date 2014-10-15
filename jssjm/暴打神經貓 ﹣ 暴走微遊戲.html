@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://game.ioxapp.com/jssjm/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script id="facebook-jssdk" src="./暴打神經貓 ﹣ 暴走微遊戲_files/sdk.js"></script><script type="text/javascript" async="" src="./暴打神經貓 ﹣ 暴走微遊戲_files/o.js"></script><script type="text/javascript" async="" src="./暴打神經貓 ﹣ 暴走微遊戲_files/linkid.js" id="undefined"></script><script async="" src="./暴打神經貓 ﹣ 暴走微遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+    <meta charset="utf-8">
+    <title>暴打神經貓 ﹣ 暴走微遊戲</title>
+    <meta name="description" content="暴走微遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    
+    <script src="./暴打神經貓 ﹣ 暴走微遊戲_files/jquery.min.js"></script>
+    <style>
+        *{padding: 0; margin: 0;}
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        html {
+
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+            
+        }
+        #ranklist{
+            display:none;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:24px;background:rgba(255,255,255,1); text-align: left;overflow-y:auto;
+        }
+        #ranklist ul{}
+        #ranklist ul li{height:50px;border-bottom:1px #bbb dashed;list-style-type:none;}
+        #ranklist ul .avatar{float:left;width:30px;height:30px;padding:10px 0; margin-left: 10px}
+        #ranklist ul .avatar img{width:30px;height:30px;}
+        #ranklist ul .name{float:left;height:30px;padding:10px 0 10px 10px;font-size:10px;color:#838383;}
+        #ranklist ul .num{float:left;height:30px;padding:10px 0 10px 0;font-size:20px;color:#b20204; margin-right: 10px}
+        #ranklist ul .fst{text-align:center;line-height:50px;font-size:18px;color:#777777;font-weight:bold;border:none;}
+
+        #top_bar{height: 45px; width: 100% ; line-height: 45px;background: #000; display: block; text-align: right; font-size: 1em}
+
+        .sbgshow{display:block;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:30px;line-height:1.7em;background:rgba(0,0,0,0.85);}
+        .sbgshow .arron{ position:absolute;top:8px;right:8px;width:100px;height:100px;background:url("http://baby.ci123.com/yunqi/m/weixin/images/arron.png") no-repeat; background-size:100px 100px;}
+        .sbgshow p{padding-top:78px;}
+        .sbg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:26px;line-height:1.7em;background:rgba(0,0,0,0.85);}
+        .sbg .arron{ position:absolute;top:8px;right:8px;width:100px;height:100px;background:url("http://baby.ci123.com/yunqi/m/weixin/images/arron.png") no-repeat; background-size:100px 100px;}
+        .sbg p{padding-top:78px;}
+        #myfav{display: none;}
+    </style>
+
+    <style type="text/css">.app2{position:fixed;z-index:1000;left:0;top:0; width:100%;padding:5px 12px;color:#fff;background:rgba(0,0,0,0.5);}.app2 .a{font-size:18px;font-weight:bold;padding-bottom:4px;}.app2 .b{font-size:10px;}.app2 .load{float:left;background:#f66;color:#fff;font-size:16px;margin-top:4px;padding:7px 14px;border-radius:5px;}
+    </style>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:25px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:15px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:13px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:13px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:17px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+<body style="padding: 0px; border: 0px; margin: 0px;">
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;" id="gameDiv">
+
+    <canvas id="gameCanvas" width="480" height="800" style="width: 480px; height: 800px; background-color: rgb(0, 0, 0);"></canvas>
+    
+</div>
+<script type="text/javascript">
+	var document_class="GameApp";
+</script>
+<script src="./暴打神經貓 ﹣ 暴走微遊戲_files/egret_loader.js"></script>
+<script src="./暴打神經貓 ﹣ 暴走微遊戲_files/game-min2.js"></script>
+<script>
+    Date.prototype.Format = function(fmt) 
+    {
+      var o = { 
+        "M+" : this.getMonth()+1,                 //月份 
+        "d+" : this.getDate(),                    //日 
+        "h+" : this.getHours(),                   //小时 
+        "m+" : this.getMinutes(),                 //分 
+        "s+" : this.getSeconds(),                 //秒 
+        "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+        "S"  : this.getMilliseconds()             //毫秒 
+      }; 
+      if(/(y+)/.test(fmt)) 
+        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+      for(var k in o) 
+        if(new RegExp("("+ k +")").test(fmt)) 
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length))); 
+      return fmt; 
+    }
+    $(document).ready(function(){
+
+        info={};
+        ranks={};
+        egret_h5.startGame();
+        var height = $(window).height();
+        $("#ranklist").css("height",height+"px");
+        $("#ranklist ul").css("height",(height-45)+"px");
+    });
+
+
+</script>
+<script language="javascript">
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '304417756396376',
+      xfbml      : true,
+      version    : 'v2.0'
+    });
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        console.log('Logged in.');
+      } else {
+        //FB.login();
+      }
+    });
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+		var mebtnopenurl = 'http://game.ioxapp.com/';
+		window.shareData = {
+		        "imgUrl": "icon.png"/*tpa=http://game.9g.com/jssjm/icon.png*/,
+		        "timeLineLink": "game.html-f=zf.htm"/*tpa=http://game.9g.com/jssjm/game.html?f=zf*/,
+		        "tTitle": "激射神经猫-9G游戏",
+		        "tContent": "激射神经猫-9G游戏"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://game.ioxapp.com/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+            var caption = "我一不小心把神經貓射出"+window.myScore+"米，整個人都神清氣爽！";
+            FB.ui({
+                method: 'feed',
+                name: '暴打神經貓',
+                link: 'http://game.ioxapp.com/jssjm/?f=fb_app',
+                picture: 'http://game.ioxapp.com/jssjm/icon.png',
+                caption: caption,
+                description: '看看你能把神經貓打多遠!',
+            }, function(response){});
+		}
+
+        function share(caption) {
+            FB.ui({
+                method: 'feed',
+                name: '暴打神經貓',
+                link: 'http://game.ioxapp.com/jssjm/?f=fb_app',
+                picture: 'http://game.ioxapp.com/jssjm/icon.png',
+                caption: caption,
+                description: '看看你能把神經貓打多遠!',
+            }, function(response){});
+        }
+
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id="share" style="display: none">
+			<img width="100%" src="./暴打神經貓 ﹣ 暴走微遊戲_files/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "jssjm" };
+						function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName = score+"米";
+				if(score>0){
+                    window.myScore = score;
+					if (confirm("我一不小心把神經貓射出"+score+"米，整個人都神清氣爽! 我要通知臉書的好友!")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+		        	document.location.href = mebtnopenurl;
+
+	        }
+			</script>
+
+			<script>
+function getParameter(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return r[2]; return null;
+}
+
+</script>
+
+
+</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./暴打神經貓 ﹣ 暴走微遊戲_files/w9JKbyW340G.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./暴打神經貓 ﹣ 暴走微遊戲_files/w9JKbyW340G(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div></body></html>

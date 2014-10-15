@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://game.ioxapp.com/bear/ -->
+<html manifest="manifest.mf"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" async="" src="./3D熊出沒-暴走小遊戲_files/linkid.js" id="undefined"></script><script async="" src="./3D熊出沒-暴走小遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+	
+        <meta http-equiv="Content-Type" content="text/html;">
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta charset="utf-8">
+		<meta name="description" content="game for iPhone">
+		<meta name="keywords" content="iPhone,Androig,iPad,game,html5 game,3d,action game,run,bear,game,Flash,Flash for iPhone,html5,iPod touch,iPad">
+		<meta name="viewport" id="viewport" content="width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta equiv="Expires" content="0">
+        <title>3D熊出沒-暴走小遊戲</title>
+<meta name="description" content="暴走小遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+
+<style type="text/css">
+<!--
+body {
+	-webkit-user-select: none;
+	margin:0 auto;
+	background:#000;
+}
+-->
+
+</style>
+
+<script type="text/javascript" src="./3D熊出沒-暴走小遊戲_files/game.js"></script>
+
+<script language="javascript">
+HOME_PATH="http://game.ioxapp.com/";
+mebtnopenurl=HOME_PATH;
+window.shareData = {
+		"imgUrl": "http://g.9g.com/xcm/icon.png",
+		"timeLineLink": "http://g.9g.com/xcm/wx.html",
+		"tTitle": "3D熊出沒-暴走小遊戲",
+		"tContent": "反向跑酷沒玩過吧？快來一起跑，結局有點出人預料！"
+};
+
+var score=0;
+function updateShareScore(s){
+	if(score!=s){
+		score=s;
+		if(score>500){
+			if(score<2000){
+				alert("不錯哦，跑了"+score+"米了！");
+			}
+			else if(score<5000){
+				alert("哇塞，跑了"+score+"米！湯瑪斯都沒你快！");
+			}
+			else if(score<10000){
+				alert("人類已經無法阻擋你了，跑了"+score+"米！");
+			}
+			else{
+				alert("原來都教授沒有走，跑了"+score+"米！");
+			}
+			show_share(score);
+		}
+	}
+}
+
+
+function show_share(s){
+	window.scrollTo(0,0);
+	if(s<500)document.title = "3D熊出沒，我逃脫" + s + "米，你要不要來比一下！";
+	if(s>=500&&s<2000)document.title = "我去，" + s + "米，這破熊真能追，你要不要來比一下！";
+	if(s>=2000&&s<5000)document.title = "突破了" + s + "米，人類新紀錄，你要不要來比一下！";
+	if(s>=10000)document.title = "神來了，" + s + "米！！你敢不敢來比一下！";
+	if(s==0)document.title = "3D熊出沒-暴走小遊戲";
+
+}
+
+
+
+</script>
+
+    </head>
+    <body onorientationchange="rtalt()" style="-webkit-transform-origin: 0px 0px 0px; ">
+
+    <div id="chf2" style="position:relative;width:320px;margin:0 auto;"><canvas id="gcvs" width="320" height="416" style="background-image: none;"></canvas></div></body></html>

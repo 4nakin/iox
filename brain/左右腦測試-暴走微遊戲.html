@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://game.ioxapp.com/brain/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>左右腦測試-暴走微遊戲</title>
+    <link rel="icon" type="image/GIF" href="http://game.ioxapp.com/brain/res/favicon.ico">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+  <script type="text/javascript" async="" src="./左右腦測試-暴走微遊戲_files/linkid.js" id="undefined"></script><script async="" src="./左右腦測試-暴走微遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body style="padding: 0px; margin: 0px; border: 0px; background: rgb(241, 194, 56);">
+	
+<div id="Cocos2dGameContainer" style="width: 534px; height: 635px; margin: 0px 363px; position: relative; overflow: hidden;"><canvas id="gameCanvas" width="534" height="635" class="gameCanvas" tabindex="99" style="outline: none; width: 534px; height: 635px; background-color: black;"></canvas></div>
+
+
+<script src="./左右腦測試-暴走微遊戲_files/game.min.js"></script><div style="font-family: Arial; position: absolute; left: -100px; top: -100px; line-height: normal; font-size: 34px;"></div><input type="text" id="imeDispatcherInput" tabindex="2" style="-webkit-transform: translate3d(0px, 0px, 0px) rotateZ(0deg) scale(0, 0) skewX(0deg) skewY(0deg); opacity: 0; font-size: 1px; position: absolute; top: 0px; left: 0px;">
+<script>
+var VER = 9;
+var PREFIX = 10;
+function getDesc(score){
+	var lineOne;
+    if(score > 120*PREFIX)
+        lineOne = "神啊！還能更高嗎？！";
+    else if(score > 90*PREFIX)
+        lineOne = "牛人啊，你是傳說中的專家嗎？";
+    else if(score > 70*PREFIX)
+        lineOne = "哇塞！你已經逼近天才的水平了！";
+    else if(score > 40*PREFIX)
+        lineOne = "厲害！你已經超過大部分人了～";
+    else if(score > 25*PREFIX)
+        lineOne = "加油！你已經超過部分朋友了～";
+    else if(score > 10*PREFIX)
+        lineOne = "不錯！你這麼快就掌握技巧了！";
+    else
+        lineOne = "深呼吸，放鬆一下大腦，再來一次！";
+
+	return lineOne;// + "\n据说真正的飞行员能拿到" + 200*PREFIX + "分";
+}
+</script>
+<script language="javascript">
+		var mebtnopenurl = 'http://game.ioxapp.com/';
+		window.shareData = {
+		        "imgUrl": "http://game.9g.com/zqdn/icon.png",
+		        "timeLineLink": "http://game.9g.com/zqdn/game.html?f=zf",
+		        "tTitle": "最强大脑-9G游戏",
+		        "tContent": "最强大脑-9G游戏"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("f=zf",1)>0){
+				window.location = "http://game.ioxapp.com/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="你了解你自己的左右腦協調指數嗎?我是"+myData.score+"分，你來試試吧!"
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id="share" style="display: none">
+			<img width="100%" src="./左右腦測試-暴走微遊戲_files/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "zqdn",score:0 };
+			 var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
+			window.shareData.timeLineLink = "http://"+ parseInt(Math.random()*100000) +"."+ myData.gameid +"."+domain+"/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName ="获得"+score+"分";
+				if(score>0){
+					if (confirm("經測試你獲得了"+score+"分！截屏分享給臉書或者Google+的夥伴們看看吧！")){
+						//dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+
+		        	document.location.href = mebtnopenurl;
+				
+	        }
+			</script>
+
+
+
+</div></body></html>

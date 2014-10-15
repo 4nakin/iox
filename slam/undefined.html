@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://game.ioxapp.com/slam/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="./undefined_files/linkid.js" id="undefined"></script><script async="" src="./undefined_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta id="viewport" name="viewport" content="width=580,user-scalable=no">
+<!--script type="text/javascript">
+	//贴心的设计...不要太感动...
+	window.ADVREDIRECT = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.leiyou.basketball&g_f=991653'; //广告跳转地址
+	window.GAMENAME = '灌篮高手';
+	window.TITLEDESCFORMAT = '我在' + window.GAMENAME + '中投进{0}球,用时{1},小伙伴们谁敢来挑战!!!'; //可以分享时title的描述格式
+	var _getvp = document.getElementById('viewport');
+	if (_getvp) {
+		var _ua = navigator.userAgent.toLowerCase(), _setW = window.innerWidth > window.innerHeight ? window.innerWidth : window.innerHeight;
+		window.glsysw = 580;
+		_getvp.content = 'width=' + window.glsysw + ',user-scalable=no';
+		if (_ua.indexOf('android') >= 0) {
+			_getvp.content += ',uc-user-scalable=no,target-densitydpi=high-dpi';
+		}
+		_ua = _setW = null;
+	}
+	_getvp = null;
+</script-->
+<meta name="oupengmobile" content="game,fullscreen">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" href="http://game.9g.com/glgs/icon.png">
+<link rel="apple-touch-startup-image" href="http://game.9g.com/glgs/startup.png">
+<link rel="shortcut icon" href="http://game.9g.com/glgs/webIcon.ico" type="image/x-icon">
+<title>undefined</title>
+<meta name="description" content="暴走微遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲,休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="灌籃高手,SLAMDUNK,櫻木花道">
+
+<style type="text/css">
+	body{
+        margin:0px;
+        /*background-color:#22416E;*/
+		 background-color:#000;
+        color:#6A6A6A;
+    }
+	canvas{
+		-ms-content-zooming:none;
+		-ms-touch-action:none;
+	}
+
+</style>
+</head>
+
+<body style="overflow: hidden; text-align: center; background: rgb(0, 0, 0);">
+
+<img src="./undefined_files/icon.png" style="position:absolute;left:-10000px;top:-10000px">
+<canvas id="linkScreen" width="580" height="635" style="width: 580px; height: 635px;">
+	很遗憾，您的浏览器不支持HTML5，请使用支持HTML5的浏览器。
+</canvas>
+<script type="text/javascript" src="./undefined_files/out.js"></script>
+
+ <script language="javascript">
+		var mebtnopenurl = 'http://game.ioxapp.com/';
+		window.shareData = {
+		        "imgUrl": "http://game.9g.com/glgs/icon.png",
+		        "timeLineLink": "http://game.ioxapp.com/glgs/game.html?f=zf",
+		        "tTitle": "灌篮高手",
+		        "tContent": "灌篮高手"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://game.ioxapp.com/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+//			document.title ="15个球我仅用了"+myData.scoreName+"就射完了,你是不是吓到了?";
+//			document.getElementById("share").style.display="";
+//			window.shareData.tTitle = document.title;
+				window.location = "https://www.facebook.com/rageminigame"
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id="share" style="display: none">
+			<img width="100%" src="./undefined_files/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "glgs" };
+			function dp_submitScore(score){
+				myData.score = parseInt(score);
+				myData.scoreName =score/1000.0+"秒";
+				if(score>0){
+					if (confirm("我僅用了"+myData.scoreName+"就射完咯，到臉書去分享下吧？")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+		        	document.location.href = mebtnopenurl;
+				}
+	      
+			</script>
+
+
+
+</div></body></html>

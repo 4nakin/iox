@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://game.ioxapp.com/pet/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="./寵物大營救-暴走小遊戲_files/linkid.js" id="undefined"></script><script async="" src="./寵物大營救-暴走小遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+<title>寵物大營救-暴走小遊戲</title>
+<meta name="description" content="暴走小遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <style>
+    html, body {
+      background: #333333;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #content {
+      width: 100%;
+      height: 100%;
+      margin: 0px auto 1px auto;
+    }
+
+    @media (max-device-width: 8in), (max-device-height: 8in) {
+      html {
+        overflow: hidden;
+      }
+      html, body {
+        height: 100%;
+      }
+      #content {
+        height: 100%;
+        width: 100%;
+        margin: inherit;
+      }
+      .no-mobile {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body onload="startGame()">
+<div id="content" style="overflow: visible; position: relative;"><canvas id="content-canvas" tabindex="0" moz-opaque="true" width="1260" height="635" style="outline-style: none; -webkit-tap-highlight-color: transparent;"></canvas><script src="./寵物大營救-暴走小遊戲_files/main-html.js"></script></div>
+<script src="./寵物大營救-暴走小遊戲_files/flambe.js"></script>
+<script type="text/javascript">
+function startGame()
+{
+  flambe.embed(["targets/main-html.js"], "content");
+}
+</script>
+<script language="javascript">
+		var mebtnopenurl = 'http://game.ioxapp.com/';
+		window.shareData = {
+		        "imgUrl": "http://g.9g.com/cwdyj/icon.png",
+		        "timeLineLink": "http://g.9g.com/cwdyj/game.html?f=zf",
+		        "tTitle": "寵物大營救",
+		        "tContent": "超可愛的消除方塊類遊戲，考驗你的智慧救出受困的寵物吧！"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("f=zf",1)>0){
+				window.location = "http://game.ioxapp.com/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			//document.getElementById("share").style.display="";
+			
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+
+			<script type="text/javascript">
+            var myData = { gameid: "cwdyj" };
+			function dp_submitScore(score,nlevel){
+						myData.score = parseInt(nlevel);
+						myData.scoreName ="闖了"+nlevel+"關";		
+						document.title = window.shareData.tTitle ="我在玩寵物大營救闖到了第"+nlevel+"關，緊張又刺激好爽啊!快來一起拯救寵物吧!";
+			}
+			function onShareComplete(res) {
+
+		        	document.location.href = mebtnopenurl;
+				}
+	        
+			</script>
+
+
+
+</body></html>

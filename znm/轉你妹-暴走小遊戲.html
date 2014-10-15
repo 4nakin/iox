@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://game.ioxapp.com/znm/ -->
+<html style="font-size: 23.625px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<script type="text/javascript" async="" src="./轉你妹-暴走小遊戲_files/linkid.js" id="undefined"></script><script async="" src="./轉你妹-暴走小遊戲_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53684223-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>	
+		<title>轉你妹-暴走小遊戲</title>
+<meta name="description" content="暴走小遊戲是港澳臺最大的手機小遊戲專業網站,免費為你提供小遊戲大全,看你有多色,打企鵝,最強大腦,最強眼力,測試遊戲,益智遊戲,腦力遊戲,情侶遊戲，休閒遊戲,等最新手機遊戲。">
+<meta name="keywords" content="小遊戲,微遊戲,手機遊戲">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<link rel="icon" href="http://game.ioxapp.com/znm/icon.png">
+		<link rel="stylesheet" type="text/css" href="./轉你妹-暴走小遊戲_files/style.css">
+		<link rel="stylesheet" href="http://game.ioxapp.com/znm/style/fa/css/font-awesome.min.css">
+		<script type="text/javascript" src="./轉你妹-暴走小遊戲_files/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="./轉你妹-暴走小遊戲_files/c200814.js"></script>
+		<style>
+a.doudouLink {
+	width: 25%;
+	height: 25%;
+	position: absolute;
+	bottom: 0;
+	left: 40%;
+	z-index: 999999;
+}
+
+.endBtn {
+	background: url(endbtn.png) no-repeat;
+	background-size: auto 100%;
+	width: 28rem;
+	height: 16rem;
+	position: relative;
+	margin: 0 auto;
+}
+
+a.moreGame {
+	width: 40%;
+	padding-top: 30%;
+	position: absolute;
+	bottom: 16%;
+	right: 0;
+}
+
+a.irestartBtn {
+	width: 40%;
+	padding-top: 30%;
+	position: absolute;
+	bottom: 16%;
+	left: 0;
+}
+
+#overlayMask {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 3;
+	background: #fff;
+	opacity: 0.6;
+}
+</style>
+		<style>
+html {
+	-ms-touch-action: none;
+	/* Direct all pointer events to JavaScript code. */
+}
+</style>
+	</head>
+	<body>
+
+		<input id="bt-game-id" type="hidden" value="6-zhuannimei">
+		<canvas id="canvas" width="1260" height="635" class="" style="width: 1260px; height: 635px;"></canvas>
+		<div id="devtools" style="z-index: 3; display: none; position: absolute; left: 50%; width: 400px; height: 400px; top: 50%; margin-top: -200px; margin-left: -200px;">
+			<h2 id="clickToExit" style="background-color: #fff; color: #000">
+				Click to exit
+			</h2>
+			<textarea id="devtoolsText" style="height: 300px; width: 400px;"></textarea>
+		</div>
+		<div id="overlay" class="faded" style="display: none;"></div>
+		<div id="startBtn" style="position: absolute; left: 40%; top: 38%; height: 25%; width: 25%; z-index: 99999999; cursor: pointer; display: none;"></div>
+		<div id="helpScreen" class="unselectable">
+			<h1 class="instructions_body">
+				規則介紹
+			</h1>
+			<p class="instructions_body" id="inst_main_body">
+				<br>
+				點擊螢幕左右側，向左向右旋轉六邊形。
+				<br>
+				相同顏色的即可消除掉下來的方塊
+				<br>
+				盡力支撐更多的時間...
+				<br>
+			</p>
+		</div>
+		<!-- <div id="openSideBar" class = 'helpText'><i class="fa fa-info-circle fa-lg"></i> <i class="fa fa-arrow-left"><b>  幫助</b></i></div> -->
+		<!-- <div id = 'pauseBtn'><div id = 'pauseBtnInner'><i class="fa fa-pause fa-2x"></i></div></div>
+		<div id = 'restartBtn'><div id = 'restartBtnInner'><i class="fa fa-refresh fa-2x"></i></div></div>
+		 -->
+		<div id="overlayMask" style="display: none;"></div>
+		
+		<script language="javascript">
+		var mebtnopenurl = 'http://game.ioxapp.com/';
+		window.shareData = {
+		        "imgUrl": "http://g.9g.com/znm/icon.png",
+		        "timeLineLink": "http://g.9g.com/znm/game.html?f=zf",
+		        "tTitle": "轉你妹-暴走小遊戲",
+		        "tContent": "輕鬆休閒的消除類遊戲，小夥伴們快來體驗一下！"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("f=zf",1)>0){
+				window.location = "http://game.ioxapp.com/?f=znm";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			
+			
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+
+		</script>
+
+		<script type="text/javascript">
+            var myData = { gameid: "znm" };
+			
+			function dp_submitScore(score){
+						myData.score = parseInt(score);
+						myData.scoreName ="獲得"+score+"分";		
+						document.title = window.shareData.tTitle = "我在【轉你妹】完成了" +score+ "分,轉暈了都，有本事來挑戰一下，嘻嘻！";
+
+			}
+			function onShareComplete(res) {
+
+		        	document.location.href = mebtnopenurl;
+				}
+	        
+			</script>
+
+	
+
+</body></html>
