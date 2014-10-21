@@ -106,7 +106,7 @@ function isMobile() {
 function isIOS() {
 	return navigator.userAgent.match(/iphone|ipod|ios/i)
 }
-var HOME_PATH = HOME_PATH || "http://game.ioxapp.com/zqyl/",
+var HOME_PATH = HOME_PATH || "http://iox.roguelikegames.com/zqyl/",
 RESOURCE_IMG_PATH = RESOURCE_IMG_PATH || "/game/",
 HORIZONTAL = HORIZONTAL || false,
 COVER_SHOW_TIME = COVER_SHOW_TIME || 2e3;

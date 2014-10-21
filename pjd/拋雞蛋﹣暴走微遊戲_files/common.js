@@ -1,13 +1,13 @@
 var btGame;~
 function(bt) {
 	bt.URL = {
-		root: "http://game.ioxapp.com/",
+		root: "http://iox.roguelikegames.com/",
 		getMoreGame: function() {
 			bt.dc("more");
-			return "http://game.ioxapp.com/"
+			return "http://iox.roguelikegames.com/"
 		},
 		getConcern: function() {
-			return "http://game.ioxapp.com/"
+			return "http://iox.roguelikegames.com/"
 		},
 	};
 	bt.getGameId = function() {

@@ -121,7 +121,7 @@ Control.prototype.checkTouchPrevent = function(e) {
 function Engine() {
     var menu = $(".dropdown-menu");
     menu.append("<li><a class='konw-us'></a></li>");
-    menu.append("<li><a href='http://m.ioxapp.com/'>更多遊戲</a></li>");
+    menu.append("<li><a href='http://iox.roguelikegames.com/'>更多遊戲</a></li>");
     CONTROL.clickOn(".konw-us", this.konwUs)
 }
 Engine.prototype.konwUs = function(event) {

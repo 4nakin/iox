@@ -57,7 +57,7 @@ var GameOverLayer = cc.Layer.extend
             try {
                 _hmt.push(['_trackEvent', 'escape', 'click', 'more', '1']);
             } catch(e) {}
-            window.open("http://game.ioxapp.com/");
+            window.open("http://iox.roguelikegames.com/");
         });
         more.setPosition(0,-60);
 

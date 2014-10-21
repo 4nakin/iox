@@ -140,8 +140,8 @@ Number = {
 var Game;
 Game = {
     name: "最強大腦",
-    link: "http://game.ioxapp.com/memtest/launcher/?f=fb_app",
-    picture: 'http://game.ioxapp.com/memtest/icon.jpg',
+    link: "http://iox.roguelikegames.com/memtest/launcher/?f=fb_app",
+    picture: 'http://iox.roguelikegames.com/memtest/icon.jpg',
     caption: "智商拙雞",
     description: '快來測試一下你要不要補腦!',
     score: 0,

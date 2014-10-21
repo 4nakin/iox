@@ -1,13 +1,13 @@
 window.shareData = {
     name: "超級馬里奧",
-    link: "http://game.ioxapp.com/mario/?f=fb_app",
+    link: "http://iox.roguelikegames.com/mario/?f=fb_app",
     picture: "http://game.ioxapp.com/mario/icon.png",
     caption: "超級馬里奧 - 不用多說，你懂得！",
     description: "超級馬里奧 - 不用多說，你懂得！"
 };
 
 window.ioxapp = {
-	home: "http://game.ioxapp.com/"
+	home: "http://iox.roguelikegames.com/"
 };
 
 window.fbAsyncInit = function() {

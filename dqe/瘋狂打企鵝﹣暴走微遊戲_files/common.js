@@ -6,12 +6,12 @@ var btGame;
 	// 所以，统一通过函数返回链接吧~，能更加灵活的更改逻辑了~
 	
 	bt.URL = {
-		root: "http://game.ioxapp.com"
+		root: "http://iox.roguelikegames.com"
 		,getMoreGame: function(){
 			// 点击更多
 			bt.dc("more");
 			
-			return "http://game.ioxapp.com";
+			return "http://iox.roguelikegames.com";
 		}
 		,getConcern: function(){
 			return mebtnopenurl;

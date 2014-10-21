@@ -28,11 +28,11 @@ function show_ad() {
 }
 function show_android_app() {
     if (android) {
-        document.write("<a href='https://play.google.com/store/apps/details?id=com.ioxapp.game.ragegame'><img src='http://m.ioxapp.com/img/badge_android.png'/></a>");
+        document.write("<a href='https://play.google.com/store/apps/details?id=com.supercool.iox'><img src='http://m.ioxapp.com/img/badge_android.png'/></a>");
     }
 }
 function show_facebook_link() {
     if (true) {
-        document.write("<a href='https://www.facebook.com/rageminigame'><img src='http://m.ioxapp.com/img/facebook.png'/></a>");
+        document.write("<a href='https://www.facebook.com/roguelikegames'><img src='http://m.ioxapp.com/img/facebook.png'/></a>");
     }
 }
