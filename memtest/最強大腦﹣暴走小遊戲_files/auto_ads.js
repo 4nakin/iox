@@ -13,13 +13,13 @@ function show_ad() {
     if (true) {
         var big_ad = document.body.clientWidth > 468;
         if (is_mobile && !big_ad) {
-            window.google_ad_client = "ca-pub-9015222295118017";
-            window.google_ad_slot = "3031932430";
+            window.google_ad_client = "ca-pub-7797623604186423";
+            window.google_ad_slot = "9247036395";
             window.google_ad_width = 320;
             window.google_ad_height = 50;
         } else {
-            window.google_ad_client = "ca-pub-9015222295118017";
-            window.google_ad_slot = "3516062839";
+            window.google_ad_client = "ca-pub-7797623604186423";
+            window.google_ad_slot = "7770303194";
             window.google_ad_width = 728;
             window.google_ad_height = 90;
         }
