@@ -1,0 +1,14 @@
+{
+"resources":
+	[
+        {"name":"tree","type":"sheet","url":"assets/tree.json"},
+        {"name":"cutSound","type":"sound","url":"http://www.9ria.com/weixin/games/fmg/resource/sound/cutSound.mp3"},
+        {"name":"die","type":"sound","url":"http://www.9ria.com/weixin/games/fmg/resource/sound/die.mp3"}
+	],
+
+"groups":
+	[
+        {"name":"preload","keys":"tree"},
+        {"name":"soundload","keys":"cutSound,die"}
+	]
+}
