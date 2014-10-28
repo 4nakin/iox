@@ -1,1 +1,1 @@
-(google_async_config = window.google_async_config || {})['ca-pub-7797623604186423'] = {"sra_enabled":false};
+(google_async_config = window.google_async_config || {})['ca-pub-7797623604186423'] = {"sra_enabled":true};
